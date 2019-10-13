@@ -1,0 +1,10 @@
+site_name: css-watchdog
+theme:
+  name: 'material'
+repo_name: 'loukas-kotas/css-watchdog-docs'
+repo_url: 'https://github.com/loukas-kotas/css-watchdog-docs'
+nav:
+  - Library: lib.md
+  - API: api.md  
+extra_css:
+  - css/style.css
