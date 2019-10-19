@@ -2,3 +2,10 @@
 .md-typeset .md-typeset__table {
     width: 100%;
 }
+
+/* change header background */
+.md-header {
+    background: #714083;
+}
+
+}
