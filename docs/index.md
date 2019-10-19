@@ -16,6 +16,7 @@
     * Get computed styles of every element in the page
     * Get computed styles of elements by class name in the page
     * Get computed styles of element by ID
+    * Get computed styles of elements by tag name
 * Use Image diffing
     * Get diff of two images
     * Get report of images comparison
