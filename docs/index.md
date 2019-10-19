@@ -1,22 +1,3 @@
-# Welcome to MkDocs
-
-For full documentation visit [mkdocs.org](https://mkdocs.org).
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
-
-
 ## Things you can do
 * Get computed CSS styles of a page
 * Test if computed CSS styles are the same with your CSS code
@@ -24,3 +5,17 @@ For full documentation visit [mkdocs.org](https://mkdocs.org).
 * Get screenshot of page
 * Get screenshot of specific element of a page
 * Compare screenshots of different domains
+
+
+## Usage
+
+* Use CLI to take screenshot of a webpage
+    * Whole page
+    * Part of the page
+* Use the watchdog module in your test files
+    * Get computed styles of every element in the page
+    * Get computed styles of elements by class name in the page
+    * Get computed styles of element by ID
+* Use Image diffing
+    * Get diff of two images
+    * Get report of images comparison
