@@ -31,7 +31,7 @@
 | GET | /api/screenshots/compare/facade | { "source": "http://loukaskotas.com", "elementId": "experience" } |
 
 
-## 7. Get specific style fields of specific class on page
+## 7. Get specific style fields of specific class on page (not implemented yet)
 | Method | URL | Body |
 | ------ |:---:|:----:|
 | GET | /api/fields/class/facade | { "source": "http://loukaskotas.com", "fields": [ "font-family", "color", "background-color", "border" ], "class": "section" } |
