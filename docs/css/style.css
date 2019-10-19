@@ -8,4 +8,11 @@
     background: #714083;
 }
 
+@media only screen and (max-width: 1219px) {
+
+/* change primary nav background only when sidemenu overlays */
+html .md-nav--primary .md-nav__title--site {
+    background: #714083;
+}
+
 }
