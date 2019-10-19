@@ -296,6 +296,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#7-get-specific-style-fields-of-specific-class-on-page" class="md-nav__link">
+    7. Get specific style fields of specific class on page
+  </a>
+  
+</li>
+      
       
       
       
@@ -377,6 +384,13 @@
         <li class="md-nav__item">
   <a href="#6-compare-two-screenshots" class="md-nav__link">
     6. Compare Two Screenshots
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-get-specific-style-fields-of-specific-class-on-page" class="md-nav__link">
+    7. Get specific style fields of specific class on page
   </a>
   
 </li>
@@ -500,6 +514,23 @@
 <td>GET</td>
 <td align="center">/api/screenshots/compare/facade</td>
 <td align="center">{ "source": "http://loukaskotas.com", "elementId": "experience" }</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-get-specific-style-fields-of-specific-class-on-page">7. Get specific style fields of specific class on page</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th align="center">URL</th>
+<th align="center">Body</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td align="center">/api/fields/class/facade</td>
+<td align="center">{ "source": "http://loukaskotas.com", "fields": [ "font-family", "color", "background-color", "border" ], "class": "section" }</td>
 </tr>
 </tbody>
 </table>
