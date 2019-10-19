@@ -36,7 +36,7 @@
     
     
       
-        <title>API - css-watchdog</title>
+        <title>CLI - css-watchdog</title>
       
     
     
@@ -79,7 +79,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#api" tabindex="1" class="md-skip">
+      <a href="#cli" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -105,7 +105,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                API
+                CLI
               
             </span>
           
@@ -226,6 +226,18 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href="../api/" title="API" class="md-nav__link">
+      API
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
@@ -237,11 +249,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        API
+        CLI
       </label>
     
-    <a href="./" title="API" class="md-nav__link md-nav__link--active">
-      API
+    <a href="./" title="CLI" class="md-nav__link md-nav__link--active">
+      CLI
     </a>
     
       
@@ -255,43 +267,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-get-specific-style-field-on-page" class="md-nav__link">
-    1. Get specific style field on page
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-get-specific-style-fields-of-specific-tags-on-page" class="md-nav__link">
-    2. Get specific style fields of specific tags on page
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-get-screenshot-of-specific-element-on-page" class="md-nav__link">
-    3. Get screenshot of specific element on page
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-get-screenshot-of-whole-page" class="md-nav__link">
-    4. Get Screenshot of whole page
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-get-all-fonts-from-page" class="md-nav__link">
-    5. Get all fonts from page
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-compare-two-screenshots" class="md-nav__link">
-    6. Compare Two Screenshots
+  <a href="#1-get-screenshot-of-whole-image" class="md-nav__link">
+    1. Get screenshot of whole image
   </a>
   
 </li>
@@ -304,18 +281,6 @@
   
 </nav>
     
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../cli/" title="CLI" class="md-nav__link">
-      CLI
-    </a>
   </li>
 
     
@@ -340,43 +305,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-get-specific-style-field-on-page" class="md-nav__link">
-    1. Get specific style field on page
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-get-specific-style-fields-of-specific-tags-on-page" class="md-nav__link">
-    2. Get specific style fields of specific tags on page
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-get-screenshot-of-specific-element-on-page" class="md-nav__link">
-    3. Get screenshot of specific element on page
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-get-screenshot-of-whole-page" class="md-nav__link">
-    4. Get Screenshot of whole page
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-get-all-fonts-from-page" class="md-nav__link">
-    5. Get all fonts from page
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-compare-two-screenshots" class="md-nav__link">
-    6. Compare Two Screenshots
+  <a href="#1-get-screenshot-of-whole-image" class="md-nav__link">
+    1. Get screenshot of whole image
   </a>
   
 </li>
@@ -397,112 +327,28 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/loukas-kotas/css-watchdog-docs/edit/master/docs/api.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/loukas-kotas/css-watchdog-docs/edit/master/docs/cli.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="api">API</h1>
-<h2 id="1-get-specific-style-field-on-page">1. Get specific style field on page</h2>
+                <h1 id="cli">CLI</h1>
+<h2 id="1-get-screenshot-of-whole-image">1. Get screenshot of whole image</h2>
+<p><code>watchdog screenshot-page &lt;url&gt;</code></p>
 <table>
 <thead>
 <tr>
-<th>Method</th>
-<th align="center">URL</th>
-<th align="center">Body</th>
+<th>Parameter</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>GET</td>
-<td align="center">/api/fields/facade</td>
-<td align="center">{ "source": "https://loukaskotas.com", "fields": [ "font-family" ] }</td>
+<td>url</td>
+<td>url of page ot get the screenshot</td>
 </tr>
 </tbody>
 </table>
-<h2 id="2-get-specific-style-fields-of-specific-tags-on-page">2. Get specific style fields of specific tags on page</h2>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th align="center">URL</th>
-<th align="center">Body</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td align="center">/api/fields/tags/facade</td>
-<td align="center">{ "source": "http://loukaskotas.com", "fields": [ "font-family", "color", "background-color", "border" ], "tags": [ "h1" ] }</td>
-</tr>
-</tbody>
-</table>
-<h2 id="3-get-screenshot-of-specific-element-on-page">3. Get screenshot of specific element on page</h2>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th align="center">URL</th>
-<th align="center">Body</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td align="center">/api/screenshots/element/facade</td>
-<td align="center">{ "source": "https://loukaskotas.com",  "elementId": "experience" }</td>
-</tr>
-</tbody>
-</table>
-<h2 id="4-get-screenshot-of-whole-page">4. Get Screenshot of whole page</h2>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th align="center">URL</th>
-<th align="center">Body</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td align="center">/api/screenshots/domain/facade</td>
-<td align="center">{ "source": "http://loukaskotas.com" }</td>
-</tr>
-</tbody>
-</table>
-<h2 id="5-get-all-fonts-from-page">5. Get all fonts from page</h2>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th align="center">URL</th>
-<th align="center">Body</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td align="center">/api/fonts/facade</td>
-<td align="center">{ "source": "http://loukaskotas.com" }</td>
-</tr>
-</tbody>
-</table>
-<h2 id="6-compare-two-screenshots">6. Compare Two Screenshots</h2>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th align="center">URL</th>
-<th align="center">Body</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td align="center">/api/screenshots/compare/facade</td>
-<td align="center">{ "source": "http://loukaskotas.com", "elementId": "experience" }</td>
-</tr>
-</tbody>
-</table>
+<p><strong>Example</strong></p>
+<p><code>watchdog screenshot-page https://loukaskotas.com</code></p>
                 
                   
                 
@@ -523,7 +369,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../lib/" title="Library" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../api/" title="API" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -532,25 +378,11 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Library
+                API
               </span>
             </div>
           </a>
         
-        
-          <a href="../cli/" title="CLI" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                CLI
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>
