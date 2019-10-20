@@ -267,8 +267,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-get-screenshot-of-whole-image" class="md-nav__link">
-    1. Get screenshot of whole image
+  <a href="#1-view-help" class="md-nav__link">
+    1. View help
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-get-screenshot-of-whole-page" class="md-nav__link">
+    2. Get screenshot of whole page
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-get-screenshot-of-part-of-the-page" class="md-nav__link">
+    3. Get screenshot of part of the page
   </a>
   
 </li>
@@ -305,8 +319,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-get-screenshot-of-whole-image" class="md-nav__link">
-    1. Get screenshot of whole image
+  <a href="#1-view-help" class="md-nav__link">
+    1. View help
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-get-screenshot-of-whole-page" class="md-nav__link">
+    2. Get screenshot of whole page
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-get-screenshot-of-part-of-the-page" class="md-nav__link">
+    3. Get screenshot of part of the page
   </a>
   
 </li>
@@ -331,8 +359,10 @@
                 
                 
                 <h1 id="cli">CLI</h1>
-<h2 id="1-get-screenshot-of-whole-image">1. Get screenshot of whole image</h2>
-<p><code>watchdog screenshot-page &lt;url&gt;</code></p>
+<h2 id="1-view-help">1. View help</h2>
+<p><code>watchdog --help</code></p>
+<h2 id="2-get-screenshot-of-whole-page">2. Get screenshot of whole page</h2>
+<p><code>watchdog screenshot-page &lt;source&gt; &lt;path-to-save&gt;</code></p>
 <table>
 <thead>
 <tr>
@@ -342,13 +372,55 @@
 </thead>
 <tbody>
 <tr>
-<td>url</td>
-<td>url of page ot get the screenshot</td>
+<td>source</td>
+<td>url of page to get the screenshot</td>
+</tr>
+<tr>
+<td>path-to-save</td>
+<td>where to save the screenshot</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<p><code>watchdog screenshot-page https://loukaskotas.com</code></p>
+<p><code>watchdog screenshot-page https://loukaskotas.com assets</code></p>
+<h2 id="3-get-screenshot-of-part-of-the-page">3. Get screenshot of part of the page</h2>
+<p><code>watchdog screenshot-part-page &lt;source&gt; &lt;path-to-save&gt; &lt;x0&gt; &lt;y0&gt; &lt;x1&gt; &lt;y1&gt;</code></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>source</td>
+<td>url of page to get the screenshot</td>
+</tr>
+<tr>
+<td>path-to-save</td>
+<td>where to save the screenshot</td>
+</tr>
+<tr>
+<td>x0</td>
+<td>starting point x-axis</td>
+</tr>
+<tr>
+<td>y0</td>
+<td>starting point y-axis</td>
+</tr>
+<tr>
+<td>x1</td>
+<td>ending point x-axis</td>
+</tr>
+<tr>
+<td>y1</td>
+<td>ending point y-axis</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<p><code>watchdog screenshot-part-page https://loukaskotas.com assets 0 0 100 100</code></p>
                 
                   
                 
