@@ -9,17 +9,9 @@
 
 /* change header background */
 .md-header {
-    background: #714083;
+    background: #febf18;
 }
 
-
-.md-header-nav__button {
-    background: white;
-    height: 48px;
-    top: -4px;
-    width: 50px;
-    left: -11px;
-}
 
 @media only screen and (max-width: 1219px) {
 
