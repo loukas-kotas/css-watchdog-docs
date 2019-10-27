@@ -6,7 +6,6 @@
 * Get screenshot of specific element of a page
 * Compare screenshots of different domains
 
-
 ## Usage
 
 * Use CLI to take screenshot of a webpage
@@ -20,3 +19,14 @@
 * Use Image diffing
     * Get diff of two images
     * Get report of images comparison
+
+## Installation
+
+```
+npm install css-watchdog
+
+npm install -g css-watchdog (in case you use CLI)
+```
+
+According to the installation you chose the library or/and the CLI will be installed!
+
