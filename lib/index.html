@@ -447,7 +447,7 @@ After that, you can call every available function.</p>
 <p>Every function returns a promise. So you need to handle each function call as a promise.
 Tip: use async/wait instead of catch/then in every function call.</p>
 <h4 id="example">Example</h4>
-<pre><code>    const Watchdog = require('css-watchdog');
+<pre><code class="javascript">    const Watchdog = require('css-watchdog');
     ...
     const watchdog = new Watchdog(); 
     const font-size = watchdog.get_attribute_of_element('https://loukaskotas.com', 'about', 'font-size');
@@ -472,8 +472,35 @@ You need to provide it in the constructor while creating a class instance.</p>
 You need to provide it in the constructor while creating a class instance.</p>
 <h4 id="example_1">Example</h4>
 <pre><code class="javascript">
+const watchdog = new Watchdog();
+const puppeteer = new Watchdog().puppeteer();
+const pathToSave = 'assets';
+var originalTimeout;
+
+
+const beforeAll = function() {
+
+    const browser = await puppeteer.launch();
+    const page    = await browser.newPage();
+    await page.goto('https://example-page.com');
+    await page.type('#usename', 'my-username', {delay: 10}) // select item with id=username and type 'my-username'.
+    await page.type('#password', 'my-password', {delay: 10}) // select item with id=password and type 'my-password'.
+    await page.click('#login-button'); // login on item with id=login-button.
+    await page.waitFor(2000); // wait for page to load.
+    const cookies = await page.cookies(); // get cookies after successful for later use.
+    jsonfile.writeFileSync('./assets/cookies.json', {data: cookies}); // write cookies on file for later use.
+    return browser; // browser will be used in beforeEach to keep the same session live.
+
+
+}
+
 const beforeEach = function() {
-    console.log('I will execute')
+
+      const cookies = jsonfile.readFileSync('./assets/cookies.json').data; // read cookies that have been set from beforeAll().
+      const page    = await browser.newPage(); 
+      await page.setCookie(...cookies); // set cookies on new page to avoid further login.
+      return page; // page will be used from every function of Watchdog Class
+
 }
 
 </code></pre>
