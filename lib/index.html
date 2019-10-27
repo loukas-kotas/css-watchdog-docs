@@ -447,12 +447,12 @@ After that, you can call every available function.</p>
 <p>Every function returns a promise. So you need to handle each function call as a promise.
 Tip: use async/wait instead of catch/then in every function call.</p>
 <h4 id="example">Example</h4>
-<pre><code class="javascript">    const Watchdog = require('css-watchdog');
-    ...
-    const watchdog = new Watchdog(); 
-    const font-size = watchdog.get_attribute_of_element('https://loukaskotas.com', 'about', 'font-size');
+<div class="codehilite"><pre><span></span>    <span class="kr">const</span> <span class="nx">Watchdog</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;css-watchdog&#39;</span><span class="p">);</span>
+    <span class="p">...</span>
+    <span class="kr">const</span> <span class="nx">watchdog</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Watchdog</span><span class="p">();</span> 
+    <span class="kr">const</span> <span class="nx">font</span><span class="o">-</span><span class="nx">size</span> <span class="o">=</span> <span class="nx">watchdog</span><span class="p">.</span><span class="nx">get_attribute_of_element</span><span class="p">(</span><span class="s1">&#39;https://loukaskotas.com&#39;</span><span class="p">,</span> <span class="s1">&#39;about&#39;</span><span class="p">,</span> <span class="s1">&#39;font-size&#39;</span><span class="p">);</span>
+</pre></div>
 
-</code></pre>
 
 <h2 id="lifecycle-hooks">Lifecycle Hooks</h2>
 <p>There are two lifecycle hooks:</p>
@@ -471,39 +471,37 @@ You need to provide it in the constructor while creating a class instance.</p>
 <p>It executes every time before a function call.
 You need to provide it in the constructor while creating a class instance.</p>
 <h4 id="example_1">Example</h4>
-<pre><code class="javascript">
-const watchdog = new Watchdog();
-const puppeteer = new Watchdog().puppeteer();
-const pathToSave = 'assets';
-var originalTimeout;
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">watchdog</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Watchdog</span><span class="p">();</span>
+<span class="kr">const</span> <span class="nx">puppeteer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Watchdog</span><span class="p">().</span><span class="nx">puppeteer</span><span class="p">();</span>
+<span class="kr">const</span> <span class="nx">pathToSave</span> <span class="o">=</span> <span class="s1">&#39;assets&#39;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">originalTimeout</span><span class="p">;</span>
 
 
-const beforeAll = function() {
+<span class="kr">const</span> <span class="nx">beforeAll</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
-    const browser = await puppeteer.launch();
-    const page    = await browser.newPage();
-    await page.goto('https://example-page.com');
-    await page.type('#usename', 'my-username', {delay: 10}) // select item with id=username and type 'my-username'.
-    await page.type('#password', 'my-password', {delay: 10}) // select item with id=password and type 'my-password'.
-    await page.click('#login-button'); // login on item with id=login-button.
-    await page.waitFor(2000); // wait for page to load.
-    const cookies = await page.cookies(); // get cookies after successful for later use.
-    jsonfile.writeFileSync('./assets/cookies.json', {data: cookies}); // write cookies on file for later use.
-    return browser; // browser will be used in beforeEach to keep the same session live.
+    <span class="kr">const</span> <span class="nx">browser</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">puppeteer</span><span class="p">.</span><span class="nx">launch</span><span class="p">();</span>
+    <span class="kr">const</span> <span class="nx">page</span>    <span class="o">=</span> <span class="nx">await</span> <span class="nx">browser</span><span class="p">.</span><span class="nx">newPage</span><span class="p">();</span>
+    <span class="nx">await</span> <span class="nx">page</span><span class="p">.</span><span class="kr">goto</span><span class="p">(</span><span class="s1">&#39;https://example-page.com&#39;</span><span class="p">);</span>
+    <span class="nx">await</span> <span class="nx">page</span><span class="p">.</span><span class="nx">type</span><span class="p">(</span><span class="s1">&#39;#usename&#39;</span><span class="p">,</span> <span class="s1">&#39;my-username&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">delay</span><span class="o">:</span> <span class="mi">10</span><span class="p">})</span> <span class="c1">// select item with id=username and type &#39;my-username&#39;.</span>
+    <span class="nx">await</span> <span class="nx">page</span><span class="p">.</span><span class="nx">type</span><span class="p">(</span><span class="s1">&#39;#password&#39;</span><span class="p">,</span> <span class="s1">&#39;my-password&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">delay</span><span class="o">:</span> <span class="mi">10</span><span class="p">})</span> <span class="c1">// select item with id=password and type &#39;my-password&#39;.</span>
+    <span class="nx">await</span> <span class="nx">page</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="s1">&#39;#login-button&#39;</span><span class="p">);</span> <span class="c1">// login on item with id=login-button.</span>
+    <span class="nx">await</span> <span class="nx">page</span><span class="p">.</span><span class="nx">waitFor</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span> <span class="c1">// wait for page to load.</span>
+    <span class="kr">const</span> <span class="nx">cookies</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">page</span><span class="p">.</span><span class="nx">cookies</span><span class="p">();</span> <span class="c1">// get cookies after successful for later use.</span>
+    <span class="nx">jsonfile</span><span class="p">.</span><span class="nx">writeFileSync</span><span class="p">(</span><span class="s1">&#39;./assets/cookies.json&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">data</span><span class="o">:</span> <span class="nx">cookies</span><span class="p">});</span> <span class="c1">// write cookies on file for later use.</span>
+    <span class="k">return</span> <span class="nx">browser</span><span class="p">;</span> <span class="c1">// browser will be used in beforeEach to keep the same session live.</span>
 
 
-}
+<span class="p">}</span>
 
-const beforeEach = function() {
+<span class="kr">const</span> <span class="nx">beforeEach</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
-      const cookies = jsonfile.readFileSync('./assets/cookies.json').data; // read cookies that have been set from beforeAll().
-      const page    = await browser.newPage(); 
-      await page.setCookie(...cookies); // set cookies on new page to avoid further login.
-      return page; // page will be used from every function of Watchdog Class
+      <span class="kr">const</span> <span class="nx">cookies</span> <span class="o">=</span> <span class="nx">jsonfile</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;./assets/cookies.json&#39;</span><span class="p">).</span><span class="nx">data</span><span class="p">;</span> <span class="c1">// read cookies that have been set from beforeAll().</span>
+      <span class="kr">const</span> <span class="nx">page</span>    <span class="o">=</span> <span class="nx">await</span> <span class="nx">browser</span><span class="p">.</span><span class="nx">newPage</span><span class="p">();</span> 
+      <span class="nx">await</span> <span class="nx">page</span><span class="p">.</span><span class="nx">setCookie</span><span class="p">(...</span><span class="nx">cookies</span><span class="p">);</span> <span class="c1">// set cookies on new page to avoid further login.</span>
+      <span class="k">return</span> <span class="nx">page</span><span class="p">;</span> <span class="c1">// page will be used from every function of Watchdog Class</span>
 
-}
-
-</code></pre>
+<span class="p">}</span>
+</pre></div>
                 
                   
                 
