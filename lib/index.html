@@ -263,6 +263,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#puppeteer" class="md-nav__link">
+    Puppeteer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#lifecycle-hooks" class="md-nav__link">
     Lifecycle Hooks
   </a>
@@ -282,8 +289,7 @@
     beforeEach
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#example_1" class="md-nav__link">
@@ -294,18 +300,6 @@
         
       </ul>
     </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#puppeteer" class="md-nav__link">
-    Puppeteer
-  </a>
   
 </li>
       
@@ -488,6 +482,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#puppeteer" class="md-nav__link">
+    Puppeteer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#lifecycle-hooks" class="md-nav__link">
     Lifecycle Hooks
   </a>
@@ -507,8 +508,7 @@
     beforeEach
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#example_1" class="md-nav__link">
@@ -519,18 +519,6 @@
         
       </ul>
     </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#puppeteer" class="md-nav__link">
-    Puppeteer
-  </a>
   
 </li>
       
@@ -674,43 +662,58 @@ Tip: use async/wait instead of catch/then in every function call.</p>
 </pre></div>
 
 
+<h2 id="puppeteer">Puppeteer</h2>
+<p>You can use pure puppeteer functions as it is simply by creating a puppeteer instance through Watchdog Class.</p>
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">puppeteer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Watchdog</span><span class="p">().</span><span class="nx">puppeteer</span><span class="p">();</span>
+</pre></div>
+
+
 <h2 id="lifecycle-hooks">Lifecycle Hooks</h2>
-<p>There are two lifecycle hooks:
-1. beforeAll  --&gt; Before every function call is executed
-2. beforeEach --&gt; Before each function call is executes</p>
+<p>There are two lifecycle hooks:</p>
+<ol>
+<li>
+<p>beforeAll  --&gt; Before every function call is executed</p>
+</li>
+<li>
+<p>beforeEach --&gt; Before each function call is executed</p>
+</li>
+</ol>
 <h3 id="beforeall">beforeAll</h3>
 <p>It executes once with the Watchdog instance creation.
 You need to provide it in the constructor while creating a class instance.</p>
 <h3 id="beforeeach">beforeEach</h3>
 <p>It executes every time before a function call.
 You need to provide it in the constructor while creating a class instance.</p>
-<h4 id="example_1">Example</h4>
-<div class="codehilite"><pre><span></span><span class="nv">const</span> <span class="nv">beforeEach</span> <span class="o">=</span> <span class="nv">function</span><span class="ss">()</span> {
-    <span class="nv">console</span>.<span class="nv">log</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">I will execute</span><span class="s1">&#39;</span><span class="ss">)</span>
-}
-<span class="nv">In</span> <span class="nv">order</span> <span class="nv">to</span> <span class="nv">use</span> <span class="nv">the</span> <span class="nv">watchdog</span> <span class="nv">library</span>, <span class="nv">a</span> <span class="nv">new</span> <span class="nv">class</span> <span class="nv">instance</span> <span class="nv">should</span> <span class="nv">be</span> <span class="nv">created</span>.
-<span class="nv">After</span> <span class="nv">that</span>, <span class="nv">you</span> <span class="nv">can</span> <span class="k">call</span> <span class="nl">every</span> <span class="nv">available</span> <span class="nv">function</span>.
-
-<span class="o">*</span> <span class="nv">Note</span> <span class="sc">#1</span>
-
-<span class="nv">Every</span> <span class="nv">function</span> <span class="nv">returns</span> <span class="nv">a</span> <span class="nv">promise</span>. <span class="nv">So</span> <span class="nv">you</span> <span class="nv">need</span> <span class="nv">to</span> <span class="nv">handle</span> <span class="nv">each</span> <span class="nv">function</span> <span class="k">call</span> <span class="nl">as</span> <span class="nv">a</span> <span class="nv">promise</span>.
-
-<span class="o">**</span><span class="nv">Tip</span>:<span class="o">**</span> <span class="nv">use</span> <span class="nv">async</span><span class="o">/</span><span class="k">wait</span> <span class="nv">instead</span> <span class="nv">of</span> <span class="nv">catch</span><span class="o">/</span><span class="k">then</span> <span class="nv">in</span> <span class="nv">every</span> <span class="nv">function</span> <span class="nv">call</span>.
+<h3 id="example_1">Example</h3>
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">watchdog</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Watchdog</span><span class="p">();</span>
+<span class="kr">const</span> <span class="nx">puppeteer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Watchdog</span><span class="p">().</span><span class="nx">puppeteer</span><span class="p">();</span> <span class="c1">// use original puppeteer functionality</span>
+<span class="kr">const</span> <span class="nx">pathToSave</span> <span class="o">=</span> <span class="s1">&#39;assets&#39;</span><span class="p">;</span> <span class="c1">// exists on root</span>
 
 
-#### <span class="nv">Example</span>
+<span class="kr">const</span> <span class="nx">beforeAll</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
-```<span class="nv">javascript</span>
-    <span class="nv">const</span> <span class="nv">Watchdog</span> <span class="o">=</span> <span class="nv">require</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">css-watchdog</span><span class="s1">&#39;</span><span class="ss">)</span><span class="c1">;</span>
-    ...
-    <span class="nv">const</span> <span class="nv">watchdog</span> <span class="o">=</span> <span class="nv">new</span> <span class="nv">Watchdog</span><span class="ss">()</span><span class="c1">; </span>
-    <span class="nv">const</span> <span class="nv">font</span><span class="o">-</span><span class="nv">size</span> <span class="o">=</span> <span class="nv">watchdog</span>.<span class="nv">get_attribute_of_element</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">https://loukaskotas.com</span><span class="s1">&#39;</span>, <span class="s1">&#39;</span><span class="s">about</span><span class="s1">&#39;</span>, <span class="s1">&#39;</span><span class="s">font-size</span><span class="s1">&#39;</span><span class="ss">)</span><span class="c1">;</span>
-</pre></div>
+    <span class="kr">const</span> <span class="nx">browser</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">puppeteer</span><span class="p">.</span><span class="nx">launch</span><span class="p">();</span>
+    <span class="kr">const</span> <span class="nx">page</span>    <span class="o">=</span> <span class="nx">await</span> <span class="nx">browser</span><span class="p">.</span><span class="nx">newPage</span><span class="p">();</span>
+    <span class="nx">await</span> <span class="nx">page</span><span class="p">.</span><span class="kr">goto</span><span class="p">(</span><span class="s1">&#39;https://example-page.com&#39;</span><span class="p">);</span>
+    <span class="nx">await</span> <span class="nx">page</span><span class="p">.</span><span class="nx">type</span><span class="p">(</span><span class="s1">&#39;#usename&#39;</span><span class="p">,</span> <span class="s1">&#39;my-username&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">delay</span><span class="o">:</span> <span class="mi">10</span><span class="p">})</span> <span class="c1">// select item with id=username and type &#39;my-username&#39;.</span>
+    <span class="nx">await</span> <span class="nx">page</span><span class="p">.</span><span class="nx">type</span><span class="p">(</span><span class="s1">&#39;#password&#39;</span><span class="p">,</span> <span class="s1">&#39;my-password&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">delay</span><span class="o">:</span> <span class="mi">10</span><span class="p">})</span> <span class="c1">// select item with id=password and type &#39;my-password&#39;.</span>
+    <span class="nx">await</span> <span class="nx">page</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="s1">&#39;#login-button&#39;</span><span class="p">);</span> <span class="c1">// login on item with id=login-button.</span>
+    <span class="nx">await</span> <span class="nx">page</span><span class="p">.</span><span class="nx">waitFor</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span> <span class="c1">// wait for page to load.</span>
+    <span class="kr">const</span> <span class="nx">cookies</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">page</span><span class="p">.</span><span class="nx">cookies</span><span class="p">();</span> <span class="c1">// get cookies after successful for later use.</span>
+    <span class="nx">jsonfile</span><span class="p">.</span><span class="nx">writeFileSync</span><span class="p">(</span><span class="s1">&#39;./assets/cookies.json&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">data</span><span class="o">:</span> <span class="nx">cookies</span><span class="p">});</span> <span class="c1">// write cookies on file for later use.</span>
+    <span class="k">return</span> <span class="nx">browser</span><span class="p">;</span> <span class="c1">// browser will be used in beforeEach to keep the same session live.</span>
 
 
-<h2 id="puppeteer">Puppeteer</h2>
-<p>You can use pure puppeteer functions as it is simply by creating a puppeteer instance through Watchdog Class.</p>
-<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">puppeteer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Watchdog</span><span class="p">().</span><span class="nx">puppeteer</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">beforeEach</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+      <span class="kr">const</span> <span class="nx">cookies</span> <span class="o">=</span> <span class="nx">jsonfile</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;./assets/cookies.json&#39;</span><span class="p">).</span><span class="nx">data</span><span class="p">;</span> <span class="c1">// read cookies that have been set from beforeAll().</span>
+      <span class="kr">const</span> <span class="nx">page</span>    <span class="o">=</span> <span class="nx">await</span> <span class="nx">browser</span><span class="p">.</span><span class="nx">newPage</span><span class="p">();</span> 
+      <span class="nx">await</span> <span class="nx">page</span><span class="p">.</span><span class="nx">setCookie</span><span class="p">(...</span><span class="nx">cookies</span><span class="p">);</span> <span class="c1">// set cookies on new page to avoid further login.</span>
+      <span class="k">return</span> <span class="nx">page</span><span class="p">;</span> <span class="c1">// page will be used from every function of Watchdog Class</span>
+
+<span class="p">}</span>
 </pre></div>
 
 
