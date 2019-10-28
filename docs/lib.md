@@ -156,34 +156,10 @@ get_attribute_of_element(source, elementId, attribute)
 
 ```javascript
 const watchdog = new Watchdog();
-const result = await watchdog.get_attributes('https://loukaskotas.com', 'about', 'font-size');
+const result = await watchdog.get_attribute_of_element('https://loukaskotas.com', 'about', 'font-size');
 ```
 
-### 4. Get specific attribute of element by ID 
-
-**Parameters**
-
-| Parameter | Description |
-| --------- | ----------- |
-| source: String    | url to be used |
-| elementId: String | ID of element as being displayed on the page  |
-| attribute: String | Desired Attribute's value  |
-
-**Syntax**
-
-```javascript
-get_attribute_of_element(source, elementId, attribute)
-```
-
-**Example**
-
-```javascript
-const watchdog = new Watchdog();
-const result = await watchdog.get_attributes('https://loukaskotas.com', 'about', 'font-size');
-```
-
-
-### 5. Get specific attribute of element by Tag name 
+### 4. Get specific attribute of element by Tag name 
 
 **Parameters**
 
@@ -278,7 +254,7 @@ screenshot_element(source, pathToSave, elementId)
 
 ```javascript
 const watchdog = new Watchdog();
-const result = await watchdog.screenshot_part_page('https://loukaskotas.com', 'assets', 'experience');
+const result = await watchdog.screenshot_element('https://loukaskotas.com', 'assets', 'experience');
 ```
 
 ### 4. Compare two images (pixel-to-pixel) 
@@ -305,7 +281,7 @@ const result = await watchdog.compare_images('./assets/images/source.png', './as
 ```
 
 
-### 5. Compare two images (pixel-to-pixel) 
+### 5. Compare two domains 
 
 **Parameters**
 
@@ -336,13 +312,13 @@ const result = await watchdog.compare_domains('https://mysite.dev.com', 'https:/
 
 | Parameter | Description | 
 | --------- | ----------- |
-| page: String | url of source domain |
+| source: String | url of source domain |
 | elementID: String | ID of element |
 
 **Syntax**
 
 ```javascript
-get_element_position(page, elementID)
+get_element_position(source, elementID)
 ```
 
 **Example**
