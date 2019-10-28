@@ -1,4 +1,4 @@
-site_name: css-watchdog
+site_name: CSS-Watchdog
 theme:
   name: 'material'
   logo: 'images/wd.svg'
