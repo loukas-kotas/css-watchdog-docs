@@ -10,3 +10,5 @@ nav:
   - CLI: cli.md
 extra_css:
   - css/style.css
+markdown_extensions:
+  - codehilite
