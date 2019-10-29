@@ -6,7 +6,7 @@ repo_name: 'loukas-kotas/css-watchdog'
 repo_url: 'https://github.com/loukas-kotas/css-watchdog'
 nav:
   - Library: lib.md
-  - API: api.md  
+  - API (BETA): api.md  
   - CLI: cli.md
 extra_css:
   - css/style.css
